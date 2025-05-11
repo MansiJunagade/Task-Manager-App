@@ -16,7 +16,7 @@ export default function Dashboard() {
       return;
     }
     axios
-      .get('http://localhost:5000/api/tasks', {
+      .get(`${process.env.NEXT_PUBLIC_API_BASE}/tasks`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => setTasks(res.data))
